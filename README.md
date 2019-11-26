@@ -1,2 +1,2 @@
-# SAMLEKOM
+# SAMLEKOM, MAMANK
 tugas akhir grafkom
