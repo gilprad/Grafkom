@@ -1,2 +1,2 @@
-# Grafkom
+# SAMLEKOM
 tugas akhir grafkom
