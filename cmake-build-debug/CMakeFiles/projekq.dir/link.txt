@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/projekq.dir/main.cpp.o  -o projekq 

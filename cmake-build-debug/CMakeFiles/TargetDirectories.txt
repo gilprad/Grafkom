@@ -1,0 +1,3 @@
+/home/gilangppppp/CLionProjects/projekq/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/gilangppppp/CLionProjects/projekq/cmake-build-debug/CMakeFiles/OpenGLLinuxTest1.dir
+/home/gilangppppp/CLionProjects/projekq/cmake-build-debug/CMakeFiles/edit_cache.dir
