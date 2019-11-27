@@ -6,13 +6,15 @@
 #include <random>
 
 //x1,x2,y1,y2,transx,transy,relativex1,relativex2,relativey1,relativey2,size
-float ikankita[] = {-18.4f, 18.4f, -5.05f, 7.25f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f};
-float enemy1[] = {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f};
-float enemy2[] = {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 2.0f};
-float enemy3[2][11] = {{-18.58f, 20.92f, -10.82f, 9.04f, 120.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f},
-                    {-18.58f, 20.92f, -10.82f, 9.04f, -120.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}} ;
-float enemy4[2][11] = {{-11.6f, 1.6f, -5.6f, 6.4f, 80.0f, 20.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f},
-                    {-11.6f, 1.6f, -5.6f, 6.4f, -80.0f, -20.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}};
+float ikankita[] = {-11.14f, 13.55f, -6.49f, 5.42f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+float enemy1[2][11] = {{-3.75f, 7.32f, -6.68f, 4.37f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f},
+                       {-3.75f, 7.32f, -6.68f, 4.37f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}};
+float enemy2[2][11] = {{-14.1f, 8.05f, -8.75f, 7.45f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 2.0f},
+                       {-14.1f, 8.05f, -8.75f, 7.45f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 2.0f}};
+float enemy3[2][11] = {{-18.98f, 25.59f, -10.24f, 5.26f, 120.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f},
+                        {-18.98f, 25.59f, -10.24f, 5.26f, -120.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}} ;
+float enemy4[2][11] = {{-11.6f, 2.0f, -5.6f, 6.4f, 80.0f, 20.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f},
+                        {-11.6f, 2.0f, -5.6f, 6.4f, -80.0f, -20.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}};
 int flip = -1;
 int scene = 0;
 double posisiAwalBawahY = -120;
@@ -28,7 +30,7 @@ int nyawa = 3;
 int nilai = 0;
 int waktu = 70;
 
-//pemanggilan perintah agar lebih gampang untuk mencetak font
+////pemanggilan perintah agar lebih gampang untuk mencetak font
 void tulis(int x, int y, char *string) {
     glRasterPos2f(x, y);
     int len = (int) strlen(string);
@@ -1046,74 +1048,6 @@ void uburubur() {
     glPopMatrix();
 }
 
-void ikan1() {
-    glPushMatrix();
-    glTranslated(ikankita[4], ikankita[5], 0);
-    glScaled(5, 5, 0);
-    glBegin(GL_POLYGON);
-    glColor3ub(98, 0, 0);
-    glVertex2f(-3.68, 0.03);
-    glVertex2f(-3.5, 0.25);
-    glVertex2f(-3.18, 0.47);
-    glVertex2f(-2.86, 0.61);
-    glVertex2f(-2.52, 0.71);
-    glVertex2f(-2.18, 0.81);
-    glVertex2f(-1.88, 0.83);
-    glVertex2f(-1.56, 0.87);
-    glVertex2f(-1.24, 0.91);
-    glVertex2f(-0.86, 0.95);
-    glVertex2f(-0.54, 1.05);
-    glVertex2f(-0.24, 1.21);
-    glVertex2f(0.12, 1.31);
-    glVertex2f(0.48, 1.45);
-    glVertex2f(0.58, 1.23);
-    glVertex2f(0.72, 1.01);
-    glVertex2f(0.98, 0.79);
-    glVertex2f(1.36, 0.71);
-    glVertex2f(1.68, 0.65);
-    glVertex2f(2, 0.65);
-    glVertex2f(2.32, 0.55);
-    glVertex2f(2.64, 0.43);
-    glVertex2f(2.92, 0.27);
-    glVertex2f(3.44, 0.67);
-    glVertex2f(3.68, 0.85);
-    glVertex2f(3.44, 0.09);
-    glVertex2f(3.5, -0.23);
-    glVertex2f(3.58, -0.63);
-    glVertex2f(3.2, -0.53);
-    glVertex2f(2.92, -0.37);
-    glVertex2f(2.64, -0.21);
-    glVertex2f(2.28, -0.29);
-    glVertex2f(2.04, -0.39);
-    glVertex2f(1.8, -0.65);
-    glVertex2f(1.5, -0.77);
-    glVertex2f(1.3, -1.01);
-    glVertex2f(1.02, -0.87);
-    glVertex2f(0.62, -0.71);
-    glVertex2f(0.22, -0.83);
-    glVertex2f(-0.3, -0.85);
-    glVertex2f(-0.76, -0.85);
-    glVertex2f(-1.16, -0.79);
-    glVertex2f(-1.6, -0.71);
-    glVertex2f(-2.04, -0.59);
-    glVertex2f(-2.34, -0.53);
-    glVertex2f(-2.7, -0.47);
-    glVertex2f(-3.02, -0.31);
-    glVertex2f(-3.34, -0.17);
-    glEnd();
-    glColor3ub(255, 255, 255);
-    glBegin(GL_POLYGON);
-    glVertex2f(-3.0237037037037, 0.3551851851852);
-    glVertex2f(-2.9111111111111, 0.2840740740741);
-    glVertex2f(-2.8933333333333, 0.1714814814815);
-    glVertex2f(-2.9525925925926, 0.1003703703704);
-    glVertex2f(-3.077037037037, 0.1003703703704);
-    glVertex2f(-3.16, 0.207037037037);
-    glVertex2f(-3.1185185185185, 0.3018518518519);
-    glEnd();
-    glPopMatrix();
-}
-
 void life() {
     glPushMatrix();
     glTranslated(posisiAwalKananX, posisiIkanY[1], 0);
@@ -1323,12 +1257,165 @@ void life() {
     glPopMatrix();
 }
 
-void ikann(){
+////ikan nemo
+void ikanUtama() {
+    glPushMatrix();
+    glScaled(1.2, 1.2, 0);
+    glPointSize(10);
+    glColor3ub(177, 67, 6);
+    glBegin(GL_POLYGON);
+    glVertex2f(-9.2933333333333, 0);
+    glVertex2f(-9, 1);
+    glVertex2f(-8.6133333333333, 1.6566666666667);
+    glVertex2f(-8, 2);
+    glVertex2f(-7.3733333333333, 2.4033333333333);
+    glVertex2f(-6.7733333333333, 2.6566666666667);
+    glVertex2f(-5.7333333333333, 3.0033333333333);
+    glVertex2f(-4.7333333333333, 3.2966666666667);
+    glVertex2f(-4.0133333333333, 3.43);
+    glVertex2f(-3.1866666666667, 3.6033333333333);
+    glVertex2f(-2.6133333333333, 3.6833333333333);
+    glVertex2f(-1.9333333333333, 4.1366666666667);
+    glVertex2f(-1.3866666666667, 4.4433333333333);
+    glVertex2f(-0.84, 4.5233333333333);
+    glVertex2f(-0.1333333333333, 4.4033333333333);
+    glVertex2f(0.2933333333333, 4.11);
+    glVertex2f(0.6666666666667, 3.6566666666667);
+    glVertex2f(0.9866666666667, 3.1633333333333);
+    glVertex2f(1.4933333333333, 2.8166666666667);
+    glVertex2f(2.3866666666667, 2.55);
+    glVertex2f(3.08, 2.47);
+    glVertex2f(3.6533333333333, 2.4833333333333);
+    glVertex2f(4.4933333333333, 2.3366666666667);
+    glVertex2f(5, 2);
+    glVertex2f(5.4133333333333, 1.7366666666667);
+    glVertex2f(5.8666666666667, 1.19);
+    glVertex2f(6.0533333333333, 0.59);
+    glVertex2f(6, 0);
+    glVertex2f(5.7466666666667, -0.2766666666667);
+    glVertex2f(5.4933333333333, -0.6366666666667);
+    glVertex2f(6.1733333333333, -0.8766666666667);
+    glVertex2f(6.7733333333333, -0.93);
+    glVertex2f(7.6666666666667, -1.0233333333333);
+    glVertex2f(8.36, -1.0633333333333);
+    glVertex2f(9.12, -1.1833333333333);
+    glVertex2f(9.8266666666667, -1.4233333333333);
+    glVertex2f(10.3066666666667, -1.9166666666667);
+    glVertex2f(10.4666666666667, -2.7966666666667);
+    glVertex2f(10.3333333333333, -3.41);
+    glVertex2f(10.1733333333333, -3.9833333333333);
+    glVertex2f(9.9066666666667, -4.57);
+    glVertex2f(9.36, -5.17);
+    glVertex2f(8.6666666666667, -5.41);
+    glVertex2f(7.8933333333333, -5.2766666666667);
+    glVertex2f(7.2133333333333, -4.93);
+    glVertex2f(6.6133333333333, -4.5966666666667);
+    glVertex2f(6.2133333333333, -4.3166666666667);
+    glVertex2f(5.5866666666667, -3.9166666666667);
+    glVertex2f(5.12, -3.7033333333333);
+    glVertex2f(4.7466666666667, -3.53);
+    glVertex2f(4.36, -3.3433333333333);
+    glVertex2f(4.4933333333333, -3.8366666666667);
+    glVertex2f(4.4, -4.2633333333333);
+    glVertex2f(4.0533333333333, -4.49);
+    glVertex2f(3.5066666666667, -4.6633333333333);
+    glVertex2f(2.8266666666667, -4.7033333333333);
+    glVertex2f(2.28, -4.61);
+    glVertex2f(1.6533333333333, -4.4633333333333);
+    glVertex2f(1.1333333333333, -4.3433333333333);
+    glVertex2f(0.6266666666667, -4.13);
+    glVertex2f(0.1733333333333, -3.81);
+    glVertex2f(-0.5066666666667, -3.7966666666667);
+    glVertex2f(-1.0133333333333, -3.7966666666667);
+    glVertex2f(-1.92, -3.7833333333333);
+    glVertex2f(-1.6933333333333, -4.33);
+    glVertex2f(-1.7066666666667, -4.8766666666667);
+    glVertex2f(-1.9466666666667, -5.1966666666667);
+    glVertex2f(-2.4, -5.2366666666667);
+    glVertex2f(-2.96, -5.13);
+    glVertex2f(-3.48, -4.9033333333333);
+    glVertex2f(-3.88, -4.5966666666667);
+    glVertex2f(-4.32, -4.1433333333333);
+    glVertex2f(-4.5733333333333, -3.7166666666667);
+    glVertex2f(-4.6533333333333, -3.41);
+    glVertex2f(-5.3466666666667, -3.17);
+    glVertex2f(-6.1466666666667, -2.8366666666667);
+    glVertex2f(-6.7466666666667, -2.5433333333333);
+    glVertex2f(-7.5066666666667, -2.0366666666667);
+    glVertex2f(-7.8666666666667, -1.7433333333333);
+    glVertex2f(-8.2133333333333, -1.4633333333333);
+    glVertex2f(-8.7866666666667, -0.8633333333333);
+    glVertex2f(-9.2933333333333, -0.25);
+    glEnd();
+    //mata
+    glColor3b(100, 100, 100);
+    glBegin(GL_POLYGON);
+    glVertex2f(-6.9733333333333, 1.3766666666667);
+    glVertex2f(-6.72, 1.2966666666667);
+    glVertex2f(-6.6, 1.11);
+    glVertex2f(-6.6, 0.87);
+    glVertex2f(-6.7333333333333, 0.6966666666667);
+    glVertex2f(-6.9466666666667, 0.6033333333333);
+    glVertex2f(-7.1466666666667, 0.63);
+    glVertex2f(-7.3066666666667, 0.79);
+    glVertex2f(-7.36, 1.0166666666667);
+    glVertex2f(-7.2266666666667, 1.2566666666667);
+    glEnd();
+    //sirip
+    glPointSize(1000);
+    glColor3b(100, 100, 100);
+    glBegin(GL_LINE_STRIP);
+    glVertex2f(-3.6, -1.1566666666667);
+    glVertex2f(-2.9066666666667, -0.8233333333333);
+    glVertex2f(-2.3466666666667, -0.6233333333333);
+    glVertex2f(-1.76, -0.5033333333333);
+    glVertex2f(-1.2533333333333, -0.45);
+    glVertex2f(-0.84, -0.4233333333333);
+    glVertex2f(-0.36, -0.4766666666667);
+    glVertex2f(-0.0533333333333, -0.7833333333333);
+    glVertex2f(0.08, -1.1566666666667);
+    glVertex2f(0.08, -1.5166666666667);
+    glVertex2f(0, -1.7966666666667);
+    glVertex2f(-0.32, -2.3033333333333);
+    glVertex2f(-0.5466666666667, -2.5833333333333);
+    glVertex2f(-1.1733333333333, -3.13);
+    glVertex2f(-1.48, -3.21);
+    glVertex2f(-1.8266666666667, -3.3033333333333);
+    glVertex2f(-2.12, -3.4233333333333);
+    glVertex2f(-2.4666666666667, -3.4633333333333);
+    glVertex2f(-2.7733333333333, -3.3833333333333);
+    glVertex2f(-3, -3);
+    glEnd();
+//sirip ekor
+    glColor3f(100, 100, 100);
+    glBegin(GL_POLYGON);
+    glVertex2f(5.4933333333333, -0.6366666666667);
+    glVertex2f(4.92, -1.5033333333333);
+    glVertex2f(4.44, -2.5166666666667);
+    glVertex2f(4.36, -3.3433333333333);
+    glVertex2f(6.2133333333333, -4.3166666666667);
+    glVertex2f(6.1866666666667, -3.3433333333333);
+    glVertex2f(6.3733333333333, -2.4366666666667);
+    glVertex2f(6.88, -1.7033333333333);
+    glVertex2f(7.6666666666667, -1.0233333333333);
+    glEnd();
+    //mulut
+    glColor3f(100, 100, 100);
+    glBegin(GL_LINE_STRIP);
+    glVertex2f(-9.2933333333333, -0.25);
+    glVertex2f(-8.9066666666667, -0.33);
+    glVertex2f(-8.6, -0.3833333333333);
+    glVertex2f(-8.2, -0.3833333333333);
+    glEnd();
+    glPopMatrix();
+}
+
+////ikan kecil sirip biru
+void ikan1(){
     glPushMatrix();
     glClearColor(1,1,1,1);
     glPointSize(10);
-    glTranslated(0,80,0);
-    glScaled(3,3,0);
+    glScaled(3.5,3.5,0);
     glColor3ub(43, 191, 254);
     glBegin(GL_POLYGON); //sirip belakang 1
     glVertex2f(2.0306995884774,-0.6945267489712);
@@ -1827,6 +1914,7 @@ void ikann(){
     glPopMatrix();
 }
 
+////ikan sirip merah sangar modele gatheli
 void ikan2(){
     glPushMatrix();
     glClearColor(1,1,1,1);
@@ -2195,9 +2283,6 @@ void ikan2(){
     glVertex2f(0.5005992083121,-0.1909212282364);
     glEnd();
 
-
-
-
     glColor3ub(255, 0, 0); //mata 1
     glBegin(GL_POLYGON);
     glVertex2f(0.5025328957251,-0.117441106543);
@@ -2230,11 +2315,10 @@ void ikan2(){
     glPopMatrix();
 }
 
-//ikan hiu
+////ikan hiu
 void ikan3() {
     glPushMatrix();
-    glTranslated(posisiAwalKananX, posisiIkanY[2], 0);
-    glScaled(3, 3, 0);
+    glScaled(2.8, 2.8, 0);
     glPointSize(10);
     glColor3ub(79, 195, 247);
     glBegin(GL_POLYGON);
@@ -2446,164 +2530,9 @@ void ikan3() {
     //perintah merender scan
 }
 
-//ikan nemo
+////ikan cupang
 void ikan4() {
     glPushMatrix();
-
-    glScaled(2, 2, 0);
-    glPointSize(10);
-    glColor3ub(177, 67, 6);
-    glBegin(GL_POLYGON);
-    glVertex2f(-9.2933333333333, 0);
-    glVertex2f(-9, 1);
-    glVertex2f(-8.6133333333333, 1.6566666666667);
-    glVertex2f(-8, 2);
-    glVertex2f(-7.3733333333333, 2.4033333333333);
-    glVertex2f(-6.7733333333333, 2.6566666666667);
-    glVertex2f(-5.7333333333333, 3.0033333333333);
-    glVertex2f(-4.7333333333333, 3.2966666666667);
-    glVertex2f(-4.0133333333333, 3.43);
-    glVertex2f(-3.1866666666667, 3.6033333333333);
-    glVertex2f(-2.6133333333333, 3.6833333333333);
-    glVertex2f(-1.9333333333333, 4.1366666666667);
-    glVertex2f(-1.3866666666667, 4.4433333333333);
-    glVertex2f(-0.84, 4.5233333333333);
-    glVertex2f(-0.1333333333333, 4.4033333333333);
-    glVertex2f(0.2933333333333, 4.11);
-    glVertex2f(0.6666666666667, 3.6566666666667);
-    glVertex2f(0.9866666666667, 3.1633333333333);
-    glVertex2f(1.4933333333333, 2.8166666666667);
-    glVertex2f(2.3866666666667, 2.55);
-    glVertex2f(3.08, 2.47);
-    glVertex2f(3.6533333333333, 2.4833333333333);
-    glVertex2f(4.4933333333333, 2.3366666666667);
-    glVertex2f(5, 2);
-    glVertex2f(5.4133333333333, 1.7366666666667);
-    glVertex2f(5.8666666666667, 1.19);
-    glVertex2f(6.0533333333333, 0.59);
-    glVertex2f(6, 0);
-    glVertex2f(5.7466666666667, -0.2766666666667);
-    glVertex2f(5.4933333333333, -0.6366666666667);
-    glVertex2f(6.1733333333333, -0.8766666666667);
-    glVertex2f(6.7733333333333, -0.93);
-    glVertex2f(7.6666666666667, -1.0233333333333);
-    glVertex2f(8.36, -1.0633333333333);
-    glVertex2f(9.12, -1.1833333333333);
-    glVertex2f(9.8266666666667, -1.4233333333333);
-    glVertex2f(10.3066666666667, -1.9166666666667);
-    glVertex2f(10.4666666666667, -2.7966666666667);
-    glVertex2f(10.3333333333333, -3.41);
-    glVertex2f(10.1733333333333, -3.9833333333333);
-    glVertex2f(9.9066666666667, -4.57);
-    glVertex2f(9.36, -5.17);
-    glVertex2f(8.6666666666667, -5.41);
-    glVertex2f(7.8933333333333, -5.2766666666667);
-    glVertex2f(7.2133333333333, -4.93);
-    glVertex2f(6.6133333333333, -4.5966666666667);
-    glVertex2f(6.2133333333333, -4.3166666666667);
-    glVertex2f(5.5866666666667, -3.9166666666667);
-    glVertex2f(5.12, -3.7033333333333);
-    glVertex2f(4.7466666666667, -3.53);
-    glVertex2f(4.36, -3.3433333333333);
-    glVertex2f(4.4933333333333, -3.8366666666667);
-    glVertex2f(4.4, -4.2633333333333);
-    glVertex2f(4.0533333333333, -4.49);
-    glVertex2f(3.5066666666667, -4.6633333333333);
-    glVertex2f(2.8266666666667, -4.7033333333333);
-    glVertex2f(2.28, -4.61);
-    glVertex2f(1.6533333333333, -4.4633333333333);
-    glVertex2f(1.1333333333333, -4.3433333333333);
-    glVertex2f(0.6266666666667, -4.13);
-    glVertex2f(0.1733333333333, -3.81);
-    glVertex2f(-0.5066666666667, -3.7966666666667);
-    glVertex2f(-1.0133333333333, -3.7966666666667);
-    glVertex2f(-1.92, -3.7833333333333);
-    glVertex2f(-1.6933333333333, -4.33);
-    glVertex2f(-1.7066666666667, -4.8766666666667);
-    glVertex2f(-1.9466666666667, -5.1966666666667);
-    glVertex2f(-2.4, -5.2366666666667);
-    glVertex2f(-2.96, -5.13);
-    glVertex2f(-3.48, -4.9033333333333);
-    glVertex2f(-3.88, -4.5966666666667);
-    glVertex2f(-4.32, -4.1433333333333);
-    glVertex2f(-4.5733333333333, -3.7166666666667);
-    glVertex2f(-4.6533333333333, -3.41);
-    glVertex2f(-5.3466666666667, -3.17);
-    glVertex2f(-6.1466666666667, -2.8366666666667);
-    glVertex2f(-6.7466666666667, -2.5433333333333);
-    glVertex2f(-7.5066666666667, -2.0366666666667);
-    glVertex2f(-7.8666666666667, -1.7433333333333);
-    glVertex2f(-8.2133333333333, -1.4633333333333);
-    glVertex2f(-8.7866666666667, -0.8633333333333);
-    glVertex2f(-9.2933333333333, -0.25);
-    glEnd();
-    //mata
-    glColor3b(100, 100, 100);
-    glBegin(GL_POLYGON);
-    glVertex2f(-6.9733333333333, 1.3766666666667);
-    glVertex2f(-6.72, 1.2966666666667);
-    glVertex2f(-6.6, 1.11);
-    glVertex2f(-6.6, 0.87);
-    glVertex2f(-6.7333333333333, 0.6966666666667);
-    glVertex2f(-6.9466666666667, 0.6033333333333);
-    glVertex2f(-7.1466666666667, 0.63);
-    glVertex2f(-7.3066666666667, 0.79);
-    glVertex2f(-7.36, 1.0166666666667);
-    glVertex2f(-7.2266666666667, 1.2566666666667);
-    glEnd();
-    //sirip
-    glPointSize(1000);
-    glColor3b(100, 100, 100);
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-3.6, -1.1566666666667);
-    glVertex2f(-2.9066666666667, -0.8233333333333);
-    glVertex2f(-2.3466666666667, -0.6233333333333);
-    glVertex2f(-1.76, -0.5033333333333);
-    glVertex2f(-1.2533333333333, -0.45);
-    glVertex2f(-0.84, -0.4233333333333);
-    glVertex2f(-0.36, -0.4766666666667);
-    glVertex2f(-0.0533333333333, -0.7833333333333);
-    glVertex2f(0.08, -1.1566666666667);
-    glVertex2f(0.08, -1.5166666666667);
-    glVertex2f(0, -1.7966666666667);
-    glVertex2f(-0.32, -2.3033333333333);
-    glVertex2f(-0.5466666666667, -2.5833333333333);
-    glVertex2f(-1.1733333333333, -3.13);
-    glVertex2f(-1.48, -3.21);
-    glVertex2f(-1.8266666666667, -3.3033333333333);
-    glVertex2f(-2.12, -3.4233333333333);
-    glVertex2f(-2.4666666666667, -3.4633333333333);
-    glVertex2f(-2.7733333333333, -3.3833333333333);
-    glVertex2f(-3, -3);
-    glEnd();
-//sirip ekor
-    glColor3f(100, 100, 100);
-    glBegin(GL_POLYGON);
-    glVertex2f(5.4933333333333, -0.6366666666667);
-    glVertex2f(4.92, -1.5033333333333);
-    glVertex2f(4.44, -2.5166666666667);
-    glVertex2f(4.36, -3.3433333333333);
-    glVertex2f(6.2133333333333, -4.3166666666667);
-    glVertex2f(6.1866666666667, -3.3433333333333);
-    glVertex2f(6.3733333333333, -2.4366666666667);
-    glVertex2f(6.88, -1.7033333333333);
-    glVertex2f(7.6666666666667, -1.0233333333333);
-    glEnd();
-    //mulut
-    glColor3f(100, 100, 100);
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-9.2933333333333, -0.25);
-    glVertex2f(-8.9066666666667, -0.33);
-    glVertex2f(-8.6, -0.3833333333333);
-    glVertex2f(-8.2, -0.3833333333333);
-    glEnd();
-    glPopMatrix();
-}
-
-//ikan cupang
-void ikan5() {
-    glPushMatrix();
-
     glScaled(2, 2, 0);
     glColor3ub(41, 14, 156);
     glBegin(GL_POLYGON);
@@ -2794,7 +2723,7 @@ void keyboard(int key, int x, int y) {
     switch (posisi) {
         case 1://untuk memberi warna putih pilihan play
             a1 = 1, b1 = 1, c1 = 1;//putih
-            a2 = 0, b2 = //    glRotated(-40, 0, 0, 1);0, c2 = 0;//hitam
+            a2 = 0, b2 = 0, c2 = 0;//hitam
             a3 = 0, b3 = 0, c3 = 0;//hitam
             break;
         case 2://untuk memberi warna putih pilihan about
@@ -3009,21 +2938,33 @@ void ikan() {
     corall1();
     tumbuhann1();
     uburubur();
-    ikann();
-    ikan1();
-    ikan2();
-    ikan3();
+    ikanUtama();
+    ////memunculkan objek 2 ikan
+    for (int i = 0; i < 2; i++){
+        glPushMatrix();
+        glTranslated(enemy1[i][4], enemy1[i][5], 0);
+        ikan1();
+        glPopMatrix();
+    }
+
+    for (int i = 0; i < 2; i++){
+        glPushMatrix();
+        glTranslated(enemy2[i][4], enemy2[i][5], 0);
+        ikan2();
+        glPopMatrix();
+    }
+
     for (int i = 0; i < 2; i++){
         glPushMatrix();
         glTranslated(enemy3[i][4], enemy3[i][5], 0);
-        ikan4();
+        ikan3();
         glPopMatrix();
     }
 
     for (int i = 0; i < 2; i++){
         glPushMatrix();
         glTranslated(enemy4[i][4], enemy4[i][5], 0);
-        ikan5();
+        ikan4();
         glPopMatrix();
     }
 
@@ -3117,6 +3058,59 @@ void timer(int) {
         ikankita[7] = ikankita[1] + ikankita[4];
         ikankita[8] = ikankita[2] + ikankita[5];
         ikankita[9] = ikankita[3] + ikankita[5];
+
+        for (int i = 0; i < 2 ; ++i) {
+            enemy1[i][6] = enemy1[i][0] + enemy1[i][4];
+            enemy1[i][7] = enemy1[i][1] + enemy1[i][4];
+            enemy1[i][8] = enemy1[i][2] + enemy1[i][5];
+            enemy1[i][9] = enemy1[i][3] + enemy1[i][5];
+            if ((
+                        (enemy1[i][6] <= ikankita[6] && ikankita[6] <= enemy1[i][7]) ||
+                        (enemy1[i][6] <= ikankita[7] && ikankita[7] <= enemy1[i][7])
+                ) &&
+                (
+                        (enemy1[i][8] <= ikankita[8] && ikankita[8] <= enemy1[i][9]) ||
+                        (enemy1[i][8] <= ikankita[9] && ikankita[9] <= enemy1[i][9])
+                )) {
+                if(enemy1[i][10] <= ikankita[10]){
+                    if(i%2==0){
+                        enemy1[i][4]=200;
+                    } else{
+                        enemy1[i][4]=-200;
+                    }
+                    nilai+=1;
+                } else{
+                    nyawa-=1;
+                }
+            }
+        }
+
+        for (int i = 0; i < 2 ; ++i) {
+            enemy2[i][6] = enemy2[i][0] + enemy2[i][4];
+            enemy2[i][7] = enemy2[i][1] + enemy2[i][4];
+            enemy2[i][8] = enemy2[i][2] + enemy2[i][5];
+            enemy2[i][9] = enemy2[i][3] + enemy2[i][5];
+            if ((
+                        (enemy2[i][6] <= ikankita[6] && ikankita[6] <= enemy2[i][7]) ||
+                        (enemy2[i][6] <= ikankita[7] && ikankita[7] <= enemy2[i][7])
+                ) &&
+                (
+                        (enemy2[i][8] <= ikankita[8] && ikankita[8] <= enemy2[i][9]) ||
+                        (enemy2[i][8] <= ikankita[9] && ikankita[9] <= enemy2[i][9])
+                )) {
+                if(enemy2[i][10] <= ikankita[10]){
+                    if(i%2==0){
+                        enemy2[i][4]=200;
+                    } else{
+                        enemy2[i][4]=-200;
+                    }
+                    nilai+=1;
+                } else{
+                    nyawa-=1;
+                }
+            }
+        }
+
         for (int i = 0; i < 2 ; ++i) {
             enemy3[i][6] = enemy3[i][0] + enemy3[i][4];
             enemy3[i][7] = enemy3[i][1] + enemy3[i][4];
@@ -3167,6 +3161,12 @@ void timer(int) {
                 }
             }
         }
+        enemy1[0][4]-=2;
+        enemy1[1][4]+=2;
+
+        enemy2[0][4]-=2;
+        enemy2[1][4]+=2;
+
         enemy3[0][4]-=2;
         enemy3[1][4]+=2;
 
