@@ -7,3 +7,4 @@ logika yang kurang:
 5. saat scene 4(saat play) di pojok kanan bawah menampilkan void nyawa(life) 3, jika size ikanUtama lebih besar daripada size enemy maka score+1, jika sebaliknya, nyawa akan berkurang 1
 6. saat sudah ditampilkan gameover atau nyawa habis dapat mereset lagi menjadi scene awal(scene=0)
 7. munculkan ikan lagi kalau enemy sudah termakan(soalnya kodingannya itu cuma melempar ikan ke kordinat tertentu, bukan merespawn ikan lagi)
+8. IKAN UTAMA GW JADI GABISA DIGERAKIN BGST TOLONGIN
