@@ -11,10 +11,10 @@ float enemy1[2][11] = {{-3.75f, 7.32f, -6.68f, 4.37f, 0.0f, 0.0f, 0.0f, 0.0f, 0.
                        {-3.75f, 7.32f, -6.68f, 4.37f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}};
 float enemy2[2][11] = {{-14.1f, 8.05f, -8.75f, 7.45f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 2.0f},
                        {-14.1f, 8.05f, -8.75f, 7.45f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 2.0f}};
-float enemy3[2][11] = {{-18.98f, 25.59f, -10.24f, 5.26f, 120.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f},
-                        {-18.98f, 25.59f, -10.24f, 5.26f, -120.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}} ;
-float enemy4[2][11] = {{-11.6f, 2.0f, -5.6f, 6.4f, 80.0f, 20.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f},
-                        {-11.6f, 2.0f, -5.6f, 6.4f, -80.0f, -20.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f}};
+float enemy3[2][11] = {{-18.98f, 25.59f, -10.24f, 5.26f, 120.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 3.0f},
+                        {-18.98f, 25.59f, -10.24f, 5.26f, -120.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 3.0f}} ;
+float enemy4[2][11] = {{-11.6f, 2.0f, -5.6f, 6.4f, 80.0f, 20.0f, 0.0f, 0.0f, 0.0f, 0.0f, 4.0f},
+                        {-11.6f, 2.0f, -5.6f, 6.4f, -80.0f, -20.0f, 0.0f, 0.0f, 0.0f, 0.0f, 4.0f}};
 int flip = -1;
 int scene = 0;
 double posisiAwalBawahY = -120;
@@ -28,7 +28,7 @@ float a2 = 0, b2 = 0, c2 = 0;
 float a3 = 0, b3 = 0, c3 = 0;
 int nyawa = 3;
 int nilai = 0;
-int waktu = 70;
+int waktu = 45;
 
 ////pemanggilan perintah agar lebih gampang untuk mencetak font
 void tulis(int x, int y, char *string) {
