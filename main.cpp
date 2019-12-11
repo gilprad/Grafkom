@@ -18,7 +18,7 @@ float enemy3[2][12] = {{-18.98f, 25.59f, -10.24f, 5.26f, 335.0f,  45.0f,  0.0f, 
 float enemy4[2][12] = {{-11.6f, 2.0f, -5.6f, 6.4f, 280.0f,  25.0f,  0.0f, 0.0f, 0.0f, 0.0f, 5.0f, 0.9f},
                        {-11.6f, 2.0f, -5.6f, 6.4f, -280.0f, -15.0f, 0.0f, 0.0f, 0.0f, 0.0f, 5.0f, 1.1f}};
 
-
+////agar dapat menjadi function random yang dapat dipanggil, CTRL + C CTRL + V dari stackoverflow
 int randomRange(int min, int max) //range : [min, max)
 {
     static bool first = true;
@@ -31,6 +31,7 @@ int randomRange(int min, int max) //range : [min, max)
 
 ////ini buat awalan scene
 int scene = 0;
+
 ////ini awalan buat level ikan kita
 int levelIkan = 1;
 
@@ -39,12 +40,16 @@ float a1 = 1, b1 = 1, c1 = 1;
 float a2 = 0, b2 = 0, c2 = 0;
 float a3 = 0, b3 = 0, c3 = 0;
 float a4 = 0, b4 = 0, c4 = 0;
+
 ////ini variabel nyawa
 int nyawa = 3;
+
 ////ini buat scoring, aku awali dari 0
 double nilai = 0;
+
 ////ini buat timernya
 int waktu = 60;
+
 ////int parameter variabel untuk ngeflip karakter utama
 int iskanan = 1;
 
@@ -1654,7 +1659,7 @@ void coral() {
     glEnd();
 }
 
-////ikan nemo
+////ikan nemo(karakter utama)
 void ikanUtama() {
     glPushMatrix();
     glScaled(1.2, 1.2, 0);
@@ -3064,6 +3069,7 @@ void ikan4() {
 ////ini untuk logika controller keyboard
 int posisi = 1;//pada awalnya memang posisi mulai adalah 1
 void keyboard(int key, int x, int y) {
+    ////kontrol dalam game
     if (scene == 1) {
         switch (key) {
             case GLUT_KEY_UP:
@@ -3090,6 +3096,7 @@ void keyboard(int key, int x, int y) {
                 break;
         }
     }
+    ////kontrol saat di main scene
     if (scene == 0) {
         switch (key) {
             case GLUT_KEY_DOWN:
@@ -3106,30 +3113,30 @@ void keyboard(int key, int x, int y) {
                 break;
         }
     }
-
+    ////pewarnaan font
     switch (posisi) {
-        case 1://untuk memberi warna putih pilihan play
-            a1 = 1, b1 = 1, c1 = 1;//putih
-            a2 = 0, b2 = 0, c2 = 0;//hitam
-            a3 = 0, b3 = 0, c3 = 0;//hitam
+        case 1:
+            a1 = 1, b1 = 1, c1 = 1;
+            a2 = 0, b2 = 0, c2 = 0;
+            a3 = 0, b3 = 0, c3 = 0;
             a4 = 0, b4 = 0, c4 = 0;
             break;
-        case 2://untuk memberi warna putih pilihan about
-            a1 = 0, b1 = 0, c1 = 0;//hitam
-            a2 = 1, b2 = 1, c2 = 1;//putih
-            a3 = 0, b3 = 0, c3 = 0;//hitam
+        case 2:
+            a1 = 0, b1 = 0, c1 = 0;
+            a2 = 1, b2 = 1, c2 = 1;
+            a3 = 0, b3 = 0, c3 = 0;
             a4 = 0, b4 = 0, c4 = 0;
             break;
-        case 3://untuk memberi warna putih pilihan exit
-            a1 = 0, b1 = 0, c1 = 0;//hitam
-            a2 = 0, b2 = 0, c2 = 0;//hitam
-            a3 = 1, b3 = 1, c3 = 1;//putih
+        case 3:
+            a1 = 0, b1 = 0, c1 = 0;
+            a2 = 0, b2 = 0, c2 = 0;
+            a3 = 1, b3 = 1, c3 = 1;
             a4 = 0, b4 = 0, c4 = 0;
             break;
-        case 4://untuk memberi warna putih pilihan exit
-            a1 = 0, b1 = 0, c1 = 0;//hitam
-            a2 = 0, b2 = 0, c2 = 0;//hitam
-            a3 = 0, b3 = 0, c3 = 0;//putih
+        case 4:
+            a1 = 0, b1 = 0, c1 = 0;
+            a2 = 0, b2 = 0, c2 = 0;
+            a3 = 0, b3 = 0, c3 = 0;
             a4 = 1, b4 = 1, c4 = 1;
             break;
     }
@@ -4423,7 +4430,6 @@ void help() {
     tulis(-60, 55, "Kontrol menggunakan key atas bawah kiri kanan");
     tulis(-140, -40,
           "Akan ada keterangan level saat masuk di game. Hanya dapat memakan ikan yang levelnya lebih rendah dari ikanmu");
-//    tulis(-64, -47, "Setiap kamu makan 5 ikan, level ikanmu bertambah 1");
     glPopMatrix();
 
     glPushMatrix();
@@ -4455,7 +4461,7 @@ void gameover() {
     tulis(-15, 0, "Score akhir : ");
     tulis(-35, -10, "Tekan ESC untuk restart game");
     char score[8] = {"0"};
-    sprintf(score, "%0.1f", nilai);
+    sprintf(score, "%0.1f", nilai);////konversi menjadi 0.0 float
     tulis(17, 0, score);
 }
 
@@ -4466,17 +4472,18 @@ void menang() {
     tulis(-15, 0, "Score akhir : ");
     tulis(-35, -10, "Tekan ESC untuk restart game");
     char score[8] = {"0"};
-    sprintf(score, "%0.1f", nilai);
+    sprintf(score, "%0.1f", nilai);////konversi menjadi 0.0 float
     tulis(17, 0, score);
 }
 
 ////ini untuk timer ketika masuk scene play
 void menangyeay(int a) {
     if (scene == 1) {
+        ////agar saat permainan habis waktunya, pemain berganti tampilan
         if (waktu == 0) {
             scene = 6;
         }
-
+        ////agar nyawa tidak bernilai negatif
         if (nyawa <= 0) {
             scene = 5;
         }
@@ -4488,11 +4495,13 @@ void menangyeay(int a) {
 ////logika ngeflip ikan utama
 void ikanutamasiap() {
     if (iskanan == 0) {
+        ////defaultnya ikan hadap kiri
         glPushMatrix();
         glTranslated(ikankita[4], ikankita[5], 0);
         ikanUtama();
         glPopMatrix();
     } else {
+        ////supaya bisa hadap ke kanan dan nggak ngerusak kolusion
         glPushMatrix();
         glTranslated(ikankita[4], ikankita[5], 0);
         glTranslated(-ikankita[0], -ikankita[2], 0);
@@ -4575,6 +4584,7 @@ void ikan() {
         }
     }
 
+    ////nyetak info di pojok layar
     glPushMatrix();
     glColor3b(1, 1, 1);
     tulis(140, 70, "Waktu: ");
@@ -4583,6 +4593,8 @@ void ikan() {
     tulis(160, 70, time);
     glPopMatrix();
 
+    ////nyetak info di pojok layar
+    glPushMatrix();
     glPushMatrix();
     glColor3b(1, 1, 1);
     tulis(140, 80, "Nyawa: ");
@@ -4591,6 +4603,8 @@ void ikan() {
     tulis(160, 80, life);
     glPopMatrix();
 
+    ////nyetak info di pojok layar
+    glPushMatrix();
     glPushMatrix();
     glColor3b(1, 1, 1);
     tulis(-160, 80, "Score: ");
@@ -4599,6 +4613,8 @@ void ikan() {
     tulis(-143, 80, score);
     glPopMatrix();
 
+    ////nyetak info di pojok layar
+    glPushMatrix();
     glPushMatrix();
     tulis(-160, 70, "Level ikanmu: ");
     char level[2] = {"0"};
@@ -4656,6 +4672,7 @@ void sceneUtama() {
 void KEYBOARD(unsigned char key, int x, int y) {
     ////escape key
     if (key == 27) {
+        ////jika saat di scene tersebut dan ditekan esc key maka akan beralih scene
         if (scene == 6 || scene == 5 || scene == 3 || scene == 2 || scene == 1) {
             scene = 0;
         } else {
@@ -4703,6 +4720,7 @@ void timer(int) {
         ////ini untuk perulangan ikan musuh yang ke 1 agar dapat muncul terus
         for (int i = 0; i < 2; ++i) {
 
+            ////ngespawn ikan sesuai dengan data yang ada di array jika sudah mencapai koordinat x tertentu
             if (i % 2 == 0) {
                 enemy1[i][4] -= enemy1[i][11];
                 if (enemy1[i][4] <= -200) {
@@ -4714,8 +4732,11 @@ void timer(int) {
                     enemy1[i][4] = -200;
                 }
 
+                ////ini buat translasi X nya
                 enemy1[i][4] += enemy1[i][11];
             }
+
+            ////ini untuk menentukan kolisionnya
             enemy1[i][6] = enemy1[i][0] + enemy1[i][4];
             enemy1[i][7] = enemy1[i][1] + enemy1[i][4];
             enemy1[i][8] = enemy1[i][2] + enemy1[i][5];
@@ -4728,15 +4749,18 @@ void timer(int) {
                         (enemy1[i][8] <= ikankita[8] && ikankita[8] <= enemy1[i][9]) ||
                         (enemy1[i][8] <= ikankita[9] && ikankita[9] <= enemy1[i][9])
                 )) {
+                ////ini logika untuk makan ikannya
                 if (enemy1[i][10] <= levelIkan) {
                     if (i % 2 == 0) {
+                        ////jika berhasil memakan akan dilempar sejauh brp koordinat X
                         enemy1[i][4] = 200;
+                        ////lalu dirandom koordinat muncul Y nya
                         enemy1[i][5] = randomRange(-50, 65);
                     } else {
                         enemy1[i][4] = -200;
                         enemy1[i][5] = randomRange(-50, 65);
                     }
-
+                    ////untuk multiplier scorenya berdasarkan level ikan
                     if (levelIkan == enemy1[i][10]) {
                         nilai += 1;
                     } else {
@@ -4927,6 +4951,7 @@ void timer(int) {
 ////ini scene utama dan pertama yang akan dieksekusi oleh program
 void render() {
     glClear(GL_COLOR_BUFFER_BIT);
+    ////untuk mereset awal nilai yang perlu direset mulai awal game
     if (scene == 0) {
         waktu = 30;
         nilai = 0;
@@ -4965,22 +4990,6 @@ void render() {
 
 ////ini main
 int main(int argc, char *argv[]) {
-//    for (int i = 0; i < 2; ++i) {
-//        enemy1[i][5] = randomRange(-50, 70);
-//    }
-//
-//    for (int i = 0; i < 2; ++i) {
-//        enemy2[i][5] = randomRange(-50, 70);
-//    }
-//
-//    for (int i = 0; i < 2; ++i) {
-//        enemy3[i][5] = randomRange(-50, 70);
-//    }
-//
-//    for (int i = 0; i < 2; ++i) {
-//        enemy4[i][5] = randomRange(-50, 70);
-//    }
-
     glutInit(&argc, argv);
     glutInitWindowSize(1368, 768);
     glutInitWindowPosition(100, 100);
